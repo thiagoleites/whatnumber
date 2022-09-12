@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual é o número?</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <header class="palpite_header">
+      <h1>Qual é o número?</h1>
+    </header>
+    <main class="palpite_segments">
+      <section class="palpite_info">
+        <span id="msg_info"></span>
+      </section>
+      <section class="palpite_led">
+        <svg width="0" height="0" viewBox="0 0 0 0">
+          <defs>
+            <g id="unit-h">
+              <path d="M0 20 L20 40 L180 40 L200 20 L180 0 L20 0 Z"></path>
+            </g>
+            <g id="unit-v">
+              <path d="M20 0 L0 20 L0 180 L20 200 L40 180 L40 20 Z"></path>
+            </g>
+          </defs>
+        </svg>
+
+        <div class="mostrador" id="led">
+          <svg data-js="und" id="number_led"  width="130" height="240" viewBox="0 0 260 480">
+            <use xlink:href="#unit-h" class="segment a" x="30" y="0"></use>
+            <use xlink:href="#unit-v" class="segment b" x="220" y="30"></use>
+            <use xlink:href="#unit-v" class="segment c" x="220" y="250"></use>
+            <use xlink:href="#unit-h" class="segment d" x="30" y="440"></use>
+            <use xlink:href="#unit-v" class="segment e" x="0" y="250"></use>
+            <use xlink:href="#unit-v" class="segment f" x="0" y="30"></use>
+            <use xlink:href="#unit-h" class="segment g" x="30" y="220"></use>
+          </svg>
+
+          <svg data-js="dez" id="number_led"  width="130" class="hide" height="240" viewBox="0 0 260 480">
+            <use xlink:href="#unit-h" class="segment a" x="30" y="0"></use>
+            <use xlink:href="#unit-v" class="segment b" x="220" y="30"></use>
+            <use xlink:href="#unit-v" class="segment c" x="220" y="250"></use>
+            <use xlink:href="#unit-h" class="segment d" x="30" y="440"></use>
+            <use xlink:href="#unit-v" class="segment e" x="0" y="250"></use>
+            <use xlink:href="#unit-v" class="segment f" x="0" y="30"></use>
+            <use xlink:href="#unit-h" class="segment g" x="30" y="220"></use>
+          </svg>
+
+          <svg data-js="cen" id="number_led"  width="130" class="hide" height="240" viewBox="0 0 260 480">
+            <use xlink:href="#unit-h" class="segment a" x="30" y="0"></use>
+            <use xlink:href="#unit-v" class="segment b" x="220" y="30"></use>
+            <use xlink:href="#unit-v" class="segment c" x="220" y="250"></use>
+            <use xlink:href="#unit-h" class="segment d" x="30" y="440"></use>
+            <use xlink:href="#unit-v" class="segment e" x="0" y="250"></use>
+            <use xlink:href="#unit-v" class="segment f" x="0" y="30"></use>
+            <use xlink:href="#unit-h" class="segment g" x="30" y="220"></use>
+          </svg>
+        </div>
+        <div id="palpite_new_game" class="d-none">
+          <button id="reload">
+            <span class="button_icon">
+              <img src="./images/icon.png" width="24" alt="Botão nova partida">
+            </span>
+            <span class="button_text">Nova partida</span>
+          </button>
+        </div>
+      </section>
+      <section class="palpite_form">
+        <input id="data_input" type="text" min="1" max="300" placeholder="Digite o palpite" />
+        <button id="btn">Enviar</button>
+      </section>
+    </main>
+    <div id="debug">resposta</div>
+    <script defer src="./js/app.js">
+    </script>
+  </body>
+</html>
